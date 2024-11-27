@@ -7,7 +7,7 @@ case $1 in
         docker build --network=host -t $(basename $PWD) .
         exit 0
         ;;
-    -r|-run|--run|run)
+    -d|-dev|--dev|dev)
         if docker images --format '{{.Repository}}:{{.Tag}}' | grep -q "^$(basename $PWD):latest$"; then
             echo
         else
@@ -29,7 +29,7 @@ case $1 in
         echo "Commands:"
         echo "  help            Display this help information."
         echo "  build           Build a new Docker image."
-        echo "  run             Run the Docker image if it exists; otherwise, build the image and then run it."
+        echo "  dev             Run the Docker image if it exists; otherwise, build the image and then run it."
         echo "  rmi             Remove the Docker image by untagging it."
         echo 
         echo "autodocker COMMAND --help to get help on each command"
