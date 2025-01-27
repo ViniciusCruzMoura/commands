@@ -13,6 +13,13 @@ case $1 in
         else
             docker build --network=host -t $(basename $PWD) .
         fi
+        if [ ! -f "$PWD/.env" ]; then
+            if [ ! -f "$PWD/.env.example" ]; then
+                touch .env
+            else
+                cp .env.example .env
+            fi
+        fi
         docker run -it --rm --network=host --env-file .env --name $(basename $PWD) -v "$PWD":/"$(basename $PWD)" -w /"$(basename $PWD)" $(basename $PWD) bash
         exit 0
         ;;
