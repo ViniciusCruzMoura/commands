@@ -31,7 +31,7 @@ case $1 in
         echo "These are common commands used in various situations:"
         echo 
         echo "Uso:"
-        echo "  autodocker COMMAND"
+        echo "  $(basename "$0") COMMAND"
         echo
         echo "Commands:"
         echo "  help            Display this help information."
@@ -39,7 +39,7 @@ case $1 in
         echo "  dev             Run the Docker image if it exists; otherwise, build the image and then run it."
         echo "  rmi             Remove the Docker image by untagging it."
         echo 
-        echo "autodocker COMMAND --help to get help on each command"
+        echo "$(basename "$0") COMMAND --help to get help on each command"
         echo		
         exit 0
         ;;
