@@ -13,4 +13,7 @@ ffmpeg \
     -framerate 25 \
     -f x11grab \
     -i :0.0+0,0 \
-    ~/Downloads/record_output.mkv
+    -f alsa -i default \
+    -codec:v libx264 \
+    -codec:a flac \
+    ~/Downloads/record_output_$(date +%F-%I-%M-%N).mkv
