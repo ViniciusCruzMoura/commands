@@ -5,3 +5,5 @@
 git log --since="1 month ago" --pretty=format:"%C(yellow)%h%x09%Creset%C(cyan)%C(bold)%ad%Creset  %C(green)%Creset %s | %C(yellow)%C(bold)%an%Creset" --date=short --no-merges
 git log --pretty=format: --name-only | sort | uniq -c | sort -rg | head -10
 #git log --pretty=format:"%ad%n%s%n%b%n------------------------" --date=iso --since="1 month"
+#git log --since="30 days ago" --author="ViniciusCruzMoura" --pretty=format:'%n----------%nAuthor: %an <%ae>%nDate:   %ad%n%n    %s%n%n    %b%n' --date='format:%Y-%m-%d %H:%M'
+#git log --since="1 month ago" --pretty=format:"%ad %s" --date=short --no-merges
